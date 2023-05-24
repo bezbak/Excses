@@ -1,0 +1,17 @@
+.user{
+    height: 99vh;
+    background-color: white;
+    color:  #1E232C;
+    padding-top: 100px;
+    .twin{
+        width: 50%;
+        text-align: center;
+        img{
+            margin: auto;
+        }
+        a{
+            text-decoration: underline;
+            font-weight: 700;
+        }
+    }
+}
