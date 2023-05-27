@@ -1,12 +1,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
 
 :root {
-  --foreground-rgb: 255, 255, 255;
+  --foreground-rgb: 30, 35, 44;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
+  --foreground-hex: #1E232C;
+}
+*{
+  font-family: 'Urbanist', sans-serif;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -25,7 +29,4 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
-}
-*{
-  font-family: Urbanist (sans-serif);
 }

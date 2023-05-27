@@ -1,17 +1,18 @@
 .user{
     height: 99vh;
     background-color: white;
-    color:  #1E232C;
-    padding-top: 100px;
+    color:  rgb(30, 35, 44);
+    
     .twin{
+        padding: 100px 80px ;
         width: 50%;
         text-align: center;
+        border: solid;
         img{
             margin: auto;
         }
-        a{
-            text-decoration: underline;
-            font-weight: 700;
-        }
+        
     }
 }
+
+
