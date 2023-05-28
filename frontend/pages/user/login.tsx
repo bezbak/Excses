@@ -1,12 +1,7 @@
 import Link from "next/link"
 import { Typography, TextField, FormControl, InputLabel, OutlinedInput, InputAdornment, IconButton, Button, Box, Divider,} from "@mui/material"
 import { VscEyeClosed, VscEye } from "react-icons/vsc"
-
-
 import React from "react";
-
-
-
 
 function Login() {
 
@@ -34,17 +29,19 @@ function Login() {
         Рады видеть тебя снова.
       </Typography>
 
-      <Box sx={{ mx:"auto", maxWidth: 400, width: "100%" }}>
+      <Box sx={{ mx:"auto", maxWidth: 400,  width: "100%" }}>
 
-        <TextField 
+        <TextField
+          type="text" 
+          name="username"
           sx={{ mt: '60px', width: "100%", }} 
           value={userName} onChange={handleUserNameChange} 
           id='outlined-adornment' 
-          label="Please enter text"
+          label="Имя пользователья"
         />
 
         <FormControl sx={{ my: 2, width: "100%" }} variant="outlined">
-          <InputLabel htmlFor="outlined-adornment-password">Password</InputLabel>
+          <InputLabel htmlFor="outlined-adornment-password">Пароль</InputLabel>
           <OutlinedInput
             value={password}
             onChange={handlePasswordChange}
@@ -58,7 +55,7 @@ function Login() {
                   onMouseDown={handleMouseDownPassword}
                   edge="end"
                 >
-                  {showPassword ? <VscEyeClosed /> : <VscEye />}
+                  {showPassword ? <VscEye />: <VscEyeClosed />}
                 </IconButton>
               </InputAdornment>
             }
@@ -75,7 +72,7 @@ function Login() {
           <Button variant="outlined" sx={{width:"100%", mt:2.5,borderRadius: 2}}>W</Button>
         </Box>
         
-        <Typography sx={{mt:2,fontSize:"18px"}}>У вас нет аккаунта? <Link href='/user/registration' className="font-bold info">Зарегистрируйтесь</Link></Typography>
+        <Typography sx={{mt:2,fontSize:"18px"}}>У вас нет аккаунта? <Link href='/user/registration' className="font-bold text-info">Зарегистрируйтесь</Link></Typography>
       </Box>
       
     </div>

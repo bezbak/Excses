@@ -41,14 +41,18 @@ const theme = createTheme({
     }
   },
   typography:{
-    fontSize:20,
+    body1:{
+      fontSize:22,
+    },
     h1: {
       fontSize: '48px',
-      fontWeight: 700
+      fontWeight: 700,
+      whiteSpace:'nowrap',
     },
     h2: {
       fontSize: '40px',
-      fontWeight: 700
+      fontWeight: 700,
+      whiteSpace:'nowrap',
     },
     h3: {
       fontSize: '32px',
