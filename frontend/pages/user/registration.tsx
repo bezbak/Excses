@@ -1,11 +1,10 @@
 import React from 'react'
-
+import UserAnimation from '@/components/user/userAnimation'
 import Link from "next/link"
 import { Typography, TextField, FormControl, InputLabel, OutlinedInput, InputAdornment, IconButton, Button, Box, Divider,} from "@mui/material"
 import { VscEyeClosed, VscEye } from "react-icons/vsc"
 
 function Registration() {
-
   const [userName, setUserName] = React.useState('');
   const [email, setEmail] = React.useState('');
   
@@ -38,92 +37,97 @@ function Registration() {
   };
   
   return (
-    <div className="registration">
+    <div className='user max-w-[1200px] m-auto flex items-center'>
+      <UserAnimation/>
+      <div className="text-center max-h-[650px] h-min w-6/12">
+      <div className="registration">
 
-      <Typography variant="h2" sx={{ color: "primary.main" }}>
-            Привет, <br/>
-      зарегистрируйтесь для начала
-      </Typography>
+        <Typography variant="h2" sx={{ color: "primary.main" }}>
+              Привет, <br/>
+        зарегистрируйтесь для начала
+        </Typography>
 
-      <Box sx={{ mx:"auto", maxWidth: 400, width: "100%" }}>
+        <Box sx={{ mx:"auto", maxWidth: 400, width: "100%" }}>
 
-        <TextField 
-          name='username'
-          type='text'
-          sx={{ mt: '60px', width: "100%", }} 
-          value={userName} onChange={handleUserNameChange} 
-          id='outlined-adornment' 
-          label="Имя пользователья"
-        />
-        <TextField
-          type="email" 
-          name="email"
-          sx={{ mt:2, width: "100%", }} 
-          value={email} onChange={handleEmailChange} 
-          id='outlined-adornment' 
-          label="Email"
-        />
-
-        <FormControl sx={{ mt: 2, width: "100%" }} variant="outlined">
-          <InputLabel htmlFor="outlined-adornment-password">Пароль</InputLabel>
-          <OutlinedInput
-            
-            value={password}
-            onChange={handlePasswordChange}
-            id="outlined-adornment-password"
-            type={showPassword ? 'text' : 'password'}
-            endAdornment={
-              <InputAdornment position="end">
-                <IconButton
-                  aria-label="toggle password visibility"
-                  onClick={handleClickShowPassword}
-                  onMouseDown={handleMouseDownPassword}
-                  edge="end"
-                >
-                  {showPassword ? <VscEye /> : <VscEyeClosed />}
-                </IconButton>
-              </InputAdornment>
-            }
-            label="Password"
+          <TextField 
+            name='username'
+            type='text'
+            sx={{ mt: '60px', width: "100%", }} 
+            value={userName} onChange={handleUserNameChange} 
+            id='outlined-adornment' 
+            label="Имя пользователья"
           />
-        </FormControl>
-
-        <FormControl sx={{ mt: 2, width: "100%" }} variant="outlined">
-          <InputLabel htmlFor="outlined-adornment-password">Пароль</InputLabel>
-          <OutlinedInput
-            value={passwordCopy}
-            onChange={handlePasswordCopyChange}
-            id="outlined-adornment-password"
-            type={showPasswordCopy ? 'text' : 'password'}
-            endAdornment={
-              <InputAdornment position="end">
-                <IconButton
-                  aria-label="toggle password visibility"
-                  onClick={handleClickShowPasswordCopy}
-                  onMouseDown={handleMouseDownPasswordCopy}
-                  edge="end"
-                >
-                  {showPasswordCopy ? <VscEye />:<VscEyeClosed />}
-                </IconButton>
-              </InputAdornment>
-            }
-            label="Password"
+          <TextField
+            type="email" 
+            name="email"
+            sx={{ mt:2, width: "100%", }} 
+            value={email} onChange={handleEmailChange} 
+            id='outlined-adornment' 
+            label="Email"
           />
-        </FormControl>
 
-        {/* <Link href="/" className="block w-fit ml-auto no-underline font-bold hover:underline">Забыли пароль?</Link> */}
-        <Button disabled={true} type="submit" variant="contained" sx={{ my:4, width: "100%", bgcolor: "#1E232C", fontSize: 16, fontWeight: 700, color: 'white', borderRadius: 2, ":hover": {} }}>Войти</Button>
+          <FormControl sx={{ mt: 2, width: "100%" }} variant="outlined">
+            <InputLabel htmlFor="outlined-adornment-password">Пароль</InputLabel>
+            <OutlinedInput
+              
+              value={password}
+              onChange={handlePasswordChange}
+              id="outlined-adornment-password"
+              type={showPassword ? 'text' : 'password'}
+              endAdornment={
+                <InputAdornment position="end">
+                  <IconButton
+                    aria-label="toggle password visibility"
+                    onClick={handleClickShowPassword}
+                    onMouseDown={handleMouseDownPassword}
+                    edge="end"
+                  >
+                    {showPassword ? <VscEye /> : <VscEyeClosed />}
+                  </IconButton>
+                </InputAdornment>
+              }
+              label="Password"
+            />
+          </FormControl>
 
-        <Divider><Typography sx={{fontSize:14, color:"secondary.main", fontWeight:600, px:5}}>или</Typography></Divider>
-        <Box sx={{display:"flex"}}>
-          <Button variant="outlined" sx={{width:"100%", mr:1, mt:2.5,borderRadius: 2}}>W</Button>
-          <Button variant="outlined" sx={{width:"100%", mr:1, mt:2.5,borderRadius: 2}}>W</Button>
-          <Button variant="outlined" sx={{width:"100%", mt:2.5,borderRadius: 2}}>W</Button>
+          <FormControl sx={{ mt: 2, width: "100%" }} variant="outlined">
+            <InputLabel htmlFor="outlined-adornment-password">Пароль</InputLabel>
+            <OutlinedInput
+              value={passwordCopy}
+              onChange={handlePasswordCopyChange}
+              id="outlined-adornment-password"
+              type={showPasswordCopy ? 'text' : 'password'}
+              endAdornment={
+                <InputAdornment position="end">
+                  <IconButton
+                    aria-label="toggle password visibility"
+                    onClick={handleClickShowPasswordCopy}
+                    onMouseDown={handleMouseDownPasswordCopy}
+                    edge="end"
+                  >
+                    {showPasswordCopy ? <VscEye />:<VscEyeClosed />}
+                  </IconButton>
+                </InputAdornment>
+              }
+              label="Password"
+            />
+          </FormControl>
+
+          {/* <Link href="/" className="block w-fit ml-auto no-underline font-bold hover:underline">Забыли пароль?</Link> */}
+          <Button disabled={true} type="submit" variant="contained" sx={{ my:4, width: "100%", bgcolor: "#1E232C", fontSize: 16, fontWeight: 700, color: 'white', borderRadius: 2, ":hover": {} }}>Войти</Button>
+
+          <Divider><Typography sx={{fontSize:14, color:"secondary.main", fontWeight:600, px:5}}>или</Typography></Divider>
+          <Box sx={{display:"flex"}}>
+            <Button variant="outlined" sx={{width:"100%", mr:1, mt:2.5,borderRadius: 2}}>W</Button>
+            <Button variant="outlined" sx={{width:"100%", mr:1, mt:2.5,borderRadius: 2}}>W</Button>
+            <Button variant="outlined" sx={{width:"100%", mt:2.5,borderRadius: 2}}>W</Button>
+          </Box>
+          
+          <Typography sx={{mt:2,fontSize:"18px"}}>У вас уже есть аккаунт?<Link href='/user/login' className="font-bold text-info">Войти сейчас</Link></Typography>
         </Box>
         
-        <Typography sx={{mt:2,fontSize:"18px"}}>У вас уже есть аккаунт?  <Link href='/user/registration' className="font-bold text-info">Войти сейчас</Link></Typography>
-      </Box>
-      
+      </div>
+      </div>
     </div>
   )
 }
