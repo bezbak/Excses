@@ -3,6 +3,7 @@ import { Typography, TextField, FormControl, InputLabel, OutlinedInput, InputAdo
 import { VscEyeClosed, VscEye } from "react-icons/vsc"
 import React from "react";
 import UserAnimation from "@/components/user/userAnimation";
+import { DarkButton } from "@/components/UI/DarkButton";
 
 function Login() {
 
@@ -25,10 +26,10 @@ function Login() {
   return (
     <div className='user max-w-[1200px] flex items-center m-auto'>
       <UserAnimation/>
-      <div className="text-center max-h-[650px] h-min w-6/12">
-      <div className="login">
+      <div className="text-center max-h-[650px] h-min md:w-6/12 w-full">
 
-        <Typography variant="h2" sx={{ color: "primary.main" }}>
+      <div className="login px-5">
+        <Typography variant="h2" sx={{ color: "primary.main", fontSize: {xs:24,md:32,lg:36,xl:40}}}>
           Добро пожаловать! <br />
           Рады видеть тебя снова.
         </Typography>
@@ -67,7 +68,12 @@ function Login() {
             />
           </FormControl>
           <Link href="/user/email" className="block w-fit ml-auto no-underline font-bold hover:underline">Забыли пароль?</Link>
-          <Button disabled={true} type="submit" variant="contained" sx={{ my:4, width: "100%", bgcolor: "#1E232C", fontSize: 16, fontWeight: 700, color: 'white', borderRadius: 2, ":hover": {} }}>Войти</Button>
+          <DarkButton 
+          disabled={ !(userName.length >6 && password.length > 7)} 
+          type="submit" 
+          variant="contained" 
+          sx={{ my:4, width: "100%", borderRadius: 2, ":hover": {} }}
+          >Войти</DarkButton>
 
           <Divider><Typography sx={{fontSize:14, color:"secondary.main", fontWeight:600, px:5}}>или</Typography></Divider>
           <Box sx={{display:"flex"}}>

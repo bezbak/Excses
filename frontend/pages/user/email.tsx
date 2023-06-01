@@ -1,30 +1,30 @@
 import React from 'react'
 import Link from "next/link"
-import { Typography, TextField, FormControl, InputLabel, OutlinedInput, InputAdornment, IconButton, Button, Box, Divider, } from "@mui/material"
+import { Typography, TextField, FormControl, InputLabel, OutlinedInput, InputAdornment, IconButton, Box, Divider, } from "@mui/material"
 import UserAnimation from "@/components/user/userAnimation";
+import { DarkButton } from '@/components/UI/DarkButton';
+
+
+
 function EmailRequest() {
-  const validateEmail = (email:string) => {
-    return String(email)
-      .toLowerCase()
-      .match(
-        /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-      );
-  };
+  function isValidEmail(_email:string) {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(_email);
+  }
   const [email, setEmail] = React.useState('');
   const handleEmailChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setEmail(event.target.value)
-    console.log(validateEmail(event.target.value));
   }
  
 
 
   return (
-    <div className='user max-w-[1200px] m-auto flex items-center'>
+    <div className='user max-w-[1200px] m-auto flex items-center '>
       <UserAnimation />
-      <div className="text-center max-h-[650px] h-min w-6/12">
-        <div className="registration">
+      <div className="text-center max-h-[650px] h-min md:w-6/12 w-full">
+        <div className="registration px-5">
 
-          <Typography variant="h2" sx={{ color: "primary.main" }}>
+          <Typography variant="h2" sx={{ color: "primary.main" , fontSize: {xs:28,md:32,lg:36,xl:40} }}>
             Забыли пароль?
           </Typography>
 
@@ -43,11 +43,11 @@ function EmailRequest() {
 
 
             {/* <Link href="/" className="block w-fit ml-auto no-underline font-bold hover:underline">Забыли пароль?</Link> */}
-            <Button 
-            disabled={(true && validateEmail(email))} 
-            
+            <DarkButton 
+            disabled={!isValidEmail(email)} 
+            type='submit'
             variant="contained" 
-            sx={{ my: 4, width: "100%", bgcolor: "#1E232C", fontSize: 16, fontWeight: 700, color: 'white', borderRadius: 2,  }}>Войти</Button>
+            sx={{ my: 4, width: "100%", bgcolor: "black", fontSize: 16, fontWeight: 700, color: 'white', borderRadius: 2, ":hover":{bgcolor:"black"} }}>Войти</DarkButton>
 
 
 

@@ -39,12 +39,16 @@ function Registration() {
   return (
     <div className='user max-w-[1200px] m-auto flex items-center'>
       <UserAnimation/>
-      <div className="text-center max-h-[650px] h-min w-6/12">
-      <div className="registration">
+      <div className="text-center max-h-[650px] h-min md:w-6/12 w-full">
+      <div className="registration px-5">
 
-        <Typography variant="h2" sx={{ color: "primary.main" }}>
-              Привет, <br/>
-        зарегистрируйтесь для начала
+        <Typography variant="h2" 
+          sx={{ 
+            color: "primary.main",
+            fontSize: {xs:24,md:32,lg:36,xl:40}
+          }}>
+                Привет, <br/>
+          зарегистрируйтесь для начала
         </Typography>
 
         <Box sx={{ mx:"auto", maxWidth: 400, width: "100%" }}>

@@ -8,7 +8,7 @@ import logo from '../../assets/all-images/Eilibay.svg'
 function UserAnimation() {
   return (
  
-        <div className="w-6/12 px-[35px] pb-10 text-center h-[650px]">
+        <div className="md:w-6/12 px-[15px] pb-10 text-center hidden h-[650px] md:block ">
             <div className="logo">
                 <Image 
                 className='m-auto mb-2.5'

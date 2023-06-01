@@ -10,6 +10,8 @@ import '@fontsource/urbanist/700.css';
 import '@fontsource/urbanist/900.css';
 
 
+
+
 const theme = createTheme({
   components:{
     MuiInputLabel:{
@@ -38,7 +40,7 @@ const theme = createTheme({
     },
     secondary:{
       main:'#8391A1'
-    }
+    },  
   },
   typography:{
     body1:{
@@ -47,12 +49,12 @@ const theme = createTheme({
     h1: {
       fontSize: '48px',
       fontWeight: 700,
-      whiteSpace:'nowrap',
+     
     },
     h2: {
       fontSize: '40px',
       fontWeight: 700,
-      whiteSpace:'nowrap',
+ 
     },
     h3: {
       fontSize: '32px',
