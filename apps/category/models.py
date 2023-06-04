@@ -11,6 +11,13 @@ class Category(models.Model):
     icon = models.FileField(
         upload_to='icons/'
     )
+    
+    def __str__(self):
+        return f"{self.name}"
+    
+    class Meta:
+        verbose_name = 'Категория'
+        verbose_name_plural = 'Категории'
 class SubCategory(models.Model):
     name = models.CharField(
         max_length=255
@@ -20,5 +27,13 @@ class SubCategory(models.Model):
     )
     parent = models.ForeignKey(
         Category,
-        related_name='sub_category'
+        related_name='sub_category',
+        on_delete=models.CASCADE
     )
+    
+    def __str__(self):
+        return f"{self.name} - {self.parent.name}"
+    
+    class Meta:
+        verbose_name = 'Суб Категория'
+        verbose_name_plural = 'Суб Категории'
