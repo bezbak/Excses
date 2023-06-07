@@ -18,7 +18,7 @@ function NewPassword() {
             <Typography sx={{ color: "secondary.main", textAlign: "left", mt: 2.5 }}>
               Пожалуйста напишите адрес вашей электронной почты для получения кода
             </Typography>
-
+              
             <DarkButton
               disabled={false}
               type='submit'
