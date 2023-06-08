@@ -45,7 +45,7 @@ function Registration() {
         <Typography variant="h2" 
           sx={{ 
             color: "primary.main",
-            fontSize: {xs:24,md:32,lg:36,xl:40}
+            fontSize: {xs:24,md:24,lg:24,xl:40}
           }}>
                 Привет, <br/>
           зарегистрируйтесь для начала

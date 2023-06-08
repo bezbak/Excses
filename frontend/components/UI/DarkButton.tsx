@@ -4,17 +4,17 @@ import Button from '@mui/material/Button';
 
 export const DarkButton = styled(Button)({
     backgroundColor: '#1E232C !important',
-    fontSize:16,
-    fontWeight:700,
+    fontSize: 16,
+    fontWeight: 700,
     color:"white",
-    borderRadius:2,
+    borderRadius: 8,
     outline:"none",
     '&:disabled': {
         backgroundColor: 'gray !important',
     },
-    '&:hover': {
-      backgroundColor: '#1E232C  !important',
-    },
+    // '&:hover': {
+    //   backgroundColor: '#1E232C  !important',
+    // },
     '&:active': {
       boxShadow: 'none',
       backgroundColor: '#0062cc',
