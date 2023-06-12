@@ -8,10 +8,7 @@ import Link from 'next/link';
 function Verify() {
 
   const [loading, setLoading] = React.useState<boolean>(false);
-  const inputClassname = "border border-solid border-[black] w-[95px] rounded-lg text-[32px] p-9"
-
-
-
+  const [hreff, setHreff] = React.useState('');
   return (
     <div className='user max-width-[1200px] flex items-center '>
       <UserAnimation />
@@ -32,12 +29,14 @@ function Verify() {
                 onComplete={code => {
                   setLoading(true);
                   setTimeout(() => setLoading(false), 10000);
+                  setHreff( !loading ? "/user/new-password" : "")
                 }}
               />
               
             <DarkButton
-              disabled={true}
+              disabled={!loading}
               type='submit'
+              href={hreff}
               variant="contained"
               sx={{ my: 4, width: "100%", bgcolor: "black", fontSize: 16, fontWeight: 700, color: 'white', borderRadius: 2, ":hover": { bgcolor: "black" } }}>Отправить код</DarkButton>
             <Typography sx={{ mt: 2, fontSize: "18px" }}>Не получили код?<Link href='/user/login' className="font-bold text-info">Отправить снова</Link></Typography>

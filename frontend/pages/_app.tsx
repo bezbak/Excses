@@ -8,6 +8,7 @@ import '@fontsource/urbanist/500.css';
 import '@fontsource/urbanist/600.css';
 import '@fontsource/urbanist/700.css';
 import '@fontsource/urbanist/900.css';
+import Layout from '@/components/pageLayout/Layout';
 
 
 
@@ -49,7 +50,6 @@ const theme = createTheme({
     h1: {
       fontSize: '48px',
       fontWeight: 700,
-     
     },
     h2: {
       fontSize: '40px',
@@ -69,9 +69,10 @@ const theme = createTheme({
 export default function App({ Component, pageProps }: AppProps) {
   return(
   <ThemeProvider theme={theme}>
+    <Layout>
       <Component {...pageProps} />
+    </Layout>
   </ThemeProvider>
-      
- 
+    
   )
 }

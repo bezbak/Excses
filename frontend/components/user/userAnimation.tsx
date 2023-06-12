@@ -23,10 +23,9 @@ function UserAnimation() {
       <Image
         className='m-auto mt-10'
         src={BigImg}
-        priority={false}
+        priority={true}
         width={450}
-        loading='lazy'
-        alt="man big phone img" />
+        alt="man big phone img"/>
 
       <span><Link href="/" className='underline font-bold mt-7'>Политика конфиденциальности </Link></span>
     </div>
