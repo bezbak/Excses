@@ -1,5 +1,5 @@
 import React from 'react'
-import UserAnimation from '@/components/user/userAnimation'
+import UserAnimation from '@/components/user/UserAnimation'
 import { Typography, FormControl, InputLabel, OutlinedInput, InputAdornment, IconButton, Box} from "@mui/material"
 import { DarkButton } from '@/components/UI/DarkButton'
 import { VscEyeClosed, VscEye } from "react-icons/vsc"

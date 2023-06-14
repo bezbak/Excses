@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link"
 import { Typography, TextField, FormControl, InputLabel, OutlinedInput, InputAdornment, IconButton, Button, Box, Divider, } from "@mui/material"
 import { VscEyeClosed, VscEye } from "react-icons/vsc"
-import UserAnimation from "@/components/user/userAnimation";
+import UserAnimation from "@/components/user/UserAnimation";
 import { DarkButton } from "@/components/UI/DarkButton";
 
 function Login() {

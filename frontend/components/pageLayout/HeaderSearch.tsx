@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { TextField, Button, Box, InputAdornment,styled } from "@mui/material";
+import { TextField, Button, Box, InputAdornment,styled, IconButton } from "@mui/material";
 import {GoSearch} from 'react-icons/go'
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
@@ -19,6 +19,7 @@ const theme = createTheme({
           borderRadius: "4px",
           position: 'relative',
           color:'#ffffff',
+          
           outline:'none',
           '&:focus':{
             outline:'none',
@@ -41,7 +42,8 @@ const theme = createTheme({
       styleOverrides:{
         root:{
           fontSize: 16,
-          color:"white"
+          color:"white",
+          paddingRight:"0px",
         }
       }
     },
@@ -71,7 +73,12 @@ const Search: React.FC<SearchProps> = ({ onSearch}) => {
         InputProps={{
           endAdornment: (
             <InputAdornment position="end" onClick={handleSearch} sx={{cursor:"pointer"}}>
-              <GoSearch className="text-2xl"/>
+              <IconButton sx={{
+                borderRadius:0,
+                width:'50px'
+              }}>
+                <GoSearch className="text-2xl"/>
+              </IconButton>
             </InputAdornment>
           ),
         }}

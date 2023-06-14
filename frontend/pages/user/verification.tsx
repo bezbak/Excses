@@ -1,5 +1,5 @@
 import React from 'react'
-import UserAnimation from '@/components/user/userAnimation'
+import UserAnimation from '@/components/user/UserAnimation'
 import { DarkButton } from '@/components/UI/DarkButton'
 import { Typography, Box } from '@mui/material'
 import InputCode from '@/components/UI/InputCode'
