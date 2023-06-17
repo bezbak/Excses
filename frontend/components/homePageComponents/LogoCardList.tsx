@@ -2,6 +2,7 @@ import { Card, Grid } from '@mui/material'
 import React from 'react'
 import CompanyLogo from '@assets/image 52.svg'
 import Image from 'next/image'
+import {Container} from '@mui/material'
 
 const Arrray = [
     {img: CompanyLogo, id:1},
@@ -17,18 +18,34 @@ const Arrray = [
 
 const LogoCardList = () => {
   return (
-    <Grid sx={{display:"grid", gridTemplateColumns:{xs:"repeat(2,47%)",sm:"repeat(2,47%)",md:"repeat(3,31%)",lg:"repeat(4,22%)"}, columnGap:{xs:"5px",md:3,lg:4},rowGap:{xs:"5px",md:3,lg:4} , my:{xs:2,md:3,lg:4} , width:"fit-content",m:"auto"}}>
+    <Container sx={{px:{xs:0}}}>
+      <Grid 
+      sx={{ 
+        display:"grid", 
+        gridTemplateColumns:{xs:"repeat(2,49%)",sm:"repeat(3,33%)",md:"repeat(4,calc(25% - 18px))",lg:"repeat(4,calc(25% - 24px))",xl:"repeat(4,calc(25% - 32px))"}, 
+        columnGap:{xs:"5px",md:3,lg:4},
+        rowGap:{xs:"5px",md:3,lg:4} , 
+        my:{xs:2,md:3,lg:4} , 
+        alignContent:'center',
+        width:"100%",
+        m:"auto"
+      }}
+      
+      >
         {Arrray.map(obj => 
-        <Card key={obj.id} sx={{border:"1px solid black", borderRadius:"20px"}}>
+        <Card key={obj.id}
+        sx={{border:"1px solid #1E232C", 
+        borderRadius:{xs:"8px",sm:"12px",md:"16px",lg:"20px"}}}>
             <Image 
             src={obj.img} 
             className='w-full'
-            
+
             alt='some text' 
             width={100} 
             height={150}/>
         </Card>)}
-    </Grid>
+      </Grid>
+    </Container>
   )
 }
 

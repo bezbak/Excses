@@ -46,7 +46,7 @@ const items: ItemProps[] = [
 export default function HeroCarousel() {
   return (
     <Carousel
-    sx={{width:"100%", height:{xs:'30%',md:"50%"}}}
+    sx={{width:"100%", height:{xs:'30vh',md:"50vh"},borderRadius:"20px", overflow:'hidden'}}
     navButtonsProps={{          
       style: {
           backgroundColor: '#E8ECF4',
@@ -95,6 +95,7 @@ export default function HeroCarousel() {
       }
 
   }}
+    className='container'
     NextIcon={<ChevronRight className='text-4xl'/>}
     PrevIcon={<ChevronLeft className='text-4xl'/>}
 
@@ -106,9 +107,9 @@ export default function HeroCarousel() {
 
 function CarouselItem(props: { item: ItemProps }) {
   return (
-    <Paper>
+    <Paper sx={{height:{xs:'30vh',md:"50vh"}}}>
       <Image 
-        className='w-full'
+        className='w-full rounded-[20px] md:rounded-[30px]'
         src={props.item.img}
         width={500}
         height={100}

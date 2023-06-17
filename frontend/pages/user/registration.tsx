@@ -67,7 +67,7 @@ function Registration() {
             sx={{ mt:2, width: "100%", }} 
             value={email} onChange={handleEmailChange} 
             id='outlined-adornment' 
-            label="Email"
+            label="Имя пользователья"
           />
 
           <FormControl sx={{ mt: 2, width: "100%" }} variant="outlined">
@@ -90,7 +90,7 @@ function Registration() {
                   </IconButton>
                 </InputAdornment>
               }
-              label="Password"
+              label="Пароль"
             />
           </FormControl>
 
@@ -113,7 +113,7 @@ function Registration() {
                   </IconButton>
                 </InputAdornment>
               }
-              label="Password"
+              label="Пароль"
             />
           </FormControl>
 

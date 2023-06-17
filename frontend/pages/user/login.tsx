@@ -64,7 +64,7 @@ function Login() {
                     </IconButton>
                   </InputAdornment>
                 }
-                label="Password"
+                label="Пароль"
               />
             </FormControl>
             <Link href="/user/email" className="block w-fit ml-auto no-underline font-bold hover:underline">Забыли пароль?</Link>
@@ -81,7 +81,6 @@ function Login() {
               <Button variant="outlined" sx={{ width: "100%", mr: 1, mt: 2.5, borderRadius: 2 }}>W</Button>
               <Button variant="outlined" sx={{ width: "100%", mt: 2.5, borderRadius: 2 }}>W</Button>
             </Box>
-
             <Typography sx={{ mt: 2, fontSize: "18px" }}>У вас нет аккаунта? <Link href='/user/registration' className="font-bold text-info">Зарегистрируйтесь</Link></Typography>
           </Box>
 

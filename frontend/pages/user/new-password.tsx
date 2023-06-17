@@ -61,7 +61,7 @@ function NewPassword() {
                   </IconButton>
                 </InputAdornment>
               }
-              label="Password"
+              label="Пароль"
             />
           </FormControl>
 
@@ -84,7 +84,7 @@ function NewPassword() {
                   </IconButton>
                 </InputAdornment>
               }
-              label="Password"
+              label="Пароль"
             />
           </FormControl>
             <DarkButton

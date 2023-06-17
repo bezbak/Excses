@@ -40,7 +40,7 @@ function EmailRequest() {
               sx={{ mt: 2, width: "100%", }}
               value={email} onChange={handleEmailChange}
               id='outlined-adornment'
-              label="Email"
+              label="Имя ползователья"
             />
 
 
