@@ -1,6 +1,7 @@
 import React from 'react';
 import { Card, CardContent, CardMedia, Typography, Button } from '@mui/material';
 import { styled } from '@mui/system';
+import { StaticImageData } from 'next/image';
 
 const ProductCardWrapper = styled(Card)(({ theme }) => ({
   display: 'flex',
