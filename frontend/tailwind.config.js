@@ -24,12 +24,10 @@ module.exports = {
     },
     extend: {
       backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+        'default': "linear-gradient(90deg, #0A0A1C 0%, #474AC4 100%)"
       },
       colors: {
-        'info': "#3190FF"
+        'info': "#3190FF",
       }
     },
   },

@@ -1,7 +1,7 @@
 import React from 'react'
 import Link from "next/link"
 import { Typography, TextField, FormControl, InputLabel, OutlinedInput, InputAdornment, IconButton, Box, Divider, } from "@mui/material"
-import UserAnimation from "@/components/user/userAnimation";
+import UserAnimation from "@/components/user/UserAnimation";
 import { DarkButton } from '@/components/UI/DarkButton';
 
 
@@ -40,7 +40,7 @@ function EmailRequest() {
               sx={{ mt: 2, width: "100%", }}
               value={email} onChange={handleEmailChange}
               id='outlined-adornment'
-              label="Email"
+              label="Имя ползователья"
             />
 
 
