@@ -41,7 +41,7 @@ class Product(models.Model):
     )
     sub_category = models.ForeignKey(
         SubCategory,
-        related_name='car_product',
+        related_name='cat_product',
         on_delete=models.DO_NOTHING
     )
     def generate_field_value(self):
