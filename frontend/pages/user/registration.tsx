@@ -3,6 +3,7 @@ import UserAnimation from '@/components/user/UserAnimation'
 import Link from "next/link"
 import { Typography, TextField, FormControl, InputLabel, OutlinedInput, InputAdornment, IconButton, Button, Box, Divider,} from "@mui/material"
 import { VscEyeClosed, VscEye } from "react-icons/vsc"
+import { DarkButton } from '@/components/UI/DarkButton'
 
 function Registration() {
   const [userName, setUserName] = React.useState('');
@@ -45,7 +46,8 @@ function Registration() {
         <Typography variant="h2" 
           sx={{ 
             color: "primary.main",
-            fontSize: {xs:24,md:24,lg:24,xl:40}
+            fontSize: {xs:24,md:24,lg:24,xl:40 },
+            whiteSpace: "wrap"
           }}>
                 Привет, <br/>
           зарегистрируйтесь для начала
@@ -118,7 +120,7 @@ function Registration() {
           </FormControl>
 
           {/* <Link href="/" className="block w-fit ml-auto no-underline font-bold hover:underline">Забыли пароль?</Link> */}
-          <Button disabled={true} type="submit" variant="contained" sx={{ my:4, width: "100%", bgcolor: "#1E232C", fontSize: 16, fontWeight: 700, color: 'white', borderRadius: 2, ":hover": {} }}>Войти</Button>
+          <DarkButton disabled={false} variant="contained" sx={{ my:4, width: "100%", bgcolor: "#1E232C", fontSize: 16, fontWeight: 700, color: 'white', borderRadius: 2, ":hover": {} }}>Войти</DarkButton>
 
           <Divider><Typography sx={{fontSize:14, color:"secondary.main", fontWeight:600, px:5}}>или</Typography></Divider>
           <Box sx={{display:"flex"}}>

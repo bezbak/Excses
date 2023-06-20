@@ -7,7 +7,7 @@ import Search from './HeaderSearch'
 import { HiOutlineHeart } from 'react-icons/hi';
 import { BiChat } from 'react-icons/bi'
 import {FaRegUser} from 'react-icons/fa';
-import {FiChevronDown} from 'react-icons/fi';
+
 
 
 
@@ -29,21 +29,21 @@ function Header() {
     <header className='bg-default h-[100px] flex items-center '>
       <Container sx={{display:'flex',alignItems:"center",justifyContent:"space-around"}}>
         <Button 
-        className={`relative w-[48px] min-w-[32px] h-[30px] cursor-pointer ${isOpen ? 'open' : ''}`}
-        onClick={handleClick} >
-            <div className={isOpen?"w-full h-[3px] bg-white absolute top-0 ":"rotate-45 w-full h-[3px] bg-white absolute top-4"}></div>         
-            <div className={isOpen?"w-3/5 h-[3px] bg-white absolute top-0 bottom-0 m-auto left-0 ":"hidden"}></div>
-            <div className={isOpen?"w-full h-[3px] bg-white absolute bottom-0 ":"-rotate-45 w-full h-[3px] bg-white absolute top-4"}></div>
+          className={`relative lg:mr-[60px] w-[48px] min-w-[32px] h-[30px] cursor-pointer ${isOpen ? 'open' : ''}`}
+          onClick={handleClick} >
+            <div className={isOpen?"w-full h-[3px] bg-white absolute top-0 rounded ":"rotate-45 w-full h-[3px] bg-white absolute top-4 rounded"}></div>         
+            <div className={isOpen?"w-3/5 h-[3px] bg-white absolute top-0 rounded bottom-0 m-auto left-0 ":"hidden"}></div>
+            <div className={isOpen?"w-full h-[3px] bg-white absolute bottom-0  rounded":"-rotate-45 w-full h-[3px] bg-white absolute top-4 rounded"}></div>
         </Button>
         <Button>
           <Image
             src={logo}
             width={42}
-            className='w-[36px] md:w-[42px]'
+            className='w-[36px] md:w-[42px] '
             alt="logo img " />
           <Typography 
             variant='h4' 
-            sx={{textTransform:'none', color:'white',ml:1,fontSize:{ xs: 24, md: 30, lg: 36, xl: 40 }}}
+            sx={{textTransform:'none', color:'white',ml:1,mr:7.5,fontSize:{ xs: 24, md: 30, lg: 36, xl: 40 }}}
             >
               Eilibay
           </Typography>
@@ -56,10 +56,7 @@ function Header() {
               label="Language"
               onChange={handleChange}
               size='small'
-              sx={{outline:'none',border:'none', borderRadius:"6px" , pr:0, width:"87px"}}
-              // endAdornment={
-              //   <FiChevronDown className='text-xl'/>
-              // }     
+              sx={{outline:'none',border:'none', borderRadius:"6px" , pr:0, width:"87px"}}    
             >
               
               <MenuItem value={"KGZ"}  sx={{fontSize:"14px", textAlign:"center"}}>KGZ</MenuItem>
@@ -75,15 +72,15 @@ function Header() {
         <nav className='none justify-around gap-[4px] hidden md:flex'  >
           <Button sx={{display:"block", color:'white'}}>
             <HiOutlineHeart className='text-xl m-auto'/>
-            <Typography sx={{fontSize:"14px"}}>Избранное</Typography>
+            <Typography sx={{fontSize:"14px",textTransform:'none'}}>Избранное</Typography>
           </Button>
           <Button sx={{display:"block", color:'white'}}>
             <BiChat className='text-xl m-auto'/>
-            <Typography sx={{fontSize:"14px"}}>Чат</Typography>
+            <Typography sx={{fontSize:"14px",textTransform:'none'}}>Чат</Typography>
           </Button>
           <Button sx={{display:"block", color:'white'}}>
             <FaRegUser className='text-xl m-auto'/>
-            <Typography sx={{fontSize:"14px"}}>Профиль</Typography>
+            <Typography sx={{fontSize:"14px",textTransform:'none'}}>Профиль</Typography>
           </Button>
         </nav>
       </Container>

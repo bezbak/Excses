@@ -8,7 +8,7 @@ import '@fontsource/urbanist/500.css';
 import '@fontsource/urbanist/600.css';
 import '@fontsource/urbanist/700.css';
 import '@fontsource/urbanist/900.css';
-import Layout from '@/components/pageLayout/Layout';
+import Layout from '@/components/Layout/Layout';
 
 
 

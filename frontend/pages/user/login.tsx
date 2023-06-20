@@ -76,10 +76,10 @@ function Login() {
             >Войти</DarkButton>
 
             <Divider><Typography sx={{ fontSize: 14, color: "secondary.main", fontWeight: 600, px: 5 }}>или</Typography></Divider>
-            <Box sx={{ display: "flex" }}>
-              <Button variant="outlined" sx={{ width: "100%", mr: 1, mt: 2.5, borderRadius: 2 }}>W</Button>
-              <Button variant="outlined" sx={{ width: "100%", mr: 1, mt: 2.5, borderRadius: 2 }}>W</Button>
-              <Button variant="outlined" sx={{ width: "100%", mt: 2.5, borderRadius: 2 }}>W</Button>
+            <Box sx={{ display: "flex",gap: 1 }}>
+              <Button variant="outlined" sx={{ width: "100%", mt: 2.5, borderRadius: 2,height:"54px" }}>W</Button>
+              <Button variant="outlined" sx={{ width: "100%", mt: 2.5, borderRadius: 2,height:"54px" }}>W</Button>
+              <Button variant="outlined" sx={{ width: "100%", mt: 2.5, borderRadius: 2,height:"54px" }}>W</Button>
             </Box>
             <Typography sx={{ mt: 2, fontSize: "18px" }}>У вас нет аккаунта? <Link href='/user/registration' className="font-bold text-info">Зарегистрируйтесь</Link></Typography>
           </Box>

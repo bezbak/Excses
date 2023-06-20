@@ -8,6 +8,7 @@ export const DarkButton = styled(Button)({
     fontWeight: 700,
     color:"white",
     borderRadius: 8,
+    height:"56px",
     outline:"none",
     '&:disabled': {
         backgroundColor: 'gray !important',

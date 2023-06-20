@@ -1,7 +1,8 @@
 import React from 'react';
 import { Card, CardContent, CardMedia, Typography, Button } from '@mui/material';
 import { styled } from '@mui/system';
-import { StaticImageData } from 'next/image';
+
+
 
 const ProductCardWrapper = styled(Card)(({ theme }) => ({
   display: 'flex',
@@ -28,7 +29,7 @@ interface ProductCardProps {
   image: string;
 }
 
-const ProductCard: React.FC<ProductCardProps> = ({ title, description, image }) => {
+ const ProductCard: React.FC<ProductCardProps> = ({ title, description, image }) => {
   return (
     <ProductCardWrapper>
       <ProductCardMedia image={image} title={title} />

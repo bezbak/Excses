@@ -16,8 +16,9 @@ const theme = createTheme({
           // Customize the root style of TextField
           backgroundColor: 'lightgray',
           border:"white solid 1px",
-          borderRadius: "4px",
+          borderRadius: "8px",
           position: 'relative',
+          overflow:"hidden",
           color:'#ffffff',
           
           outline:'none',

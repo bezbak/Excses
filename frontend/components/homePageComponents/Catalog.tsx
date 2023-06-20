@@ -10,6 +10,7 @@ import {
   OutlinedInput,
   InputAdornment
 } from '@mui/material';
+import ProductCard from './Card';
 
 interface SelectDataItem {
   id: number;
@@ -17,6 +18,27 @@ interface SelectDataItem {
   defaultValue: string;
   MenuItems: string[];
 }
+
+const productData = [
+  {
+    id: 1,
+    title: 'Product 1',
+    description: 'This is the description of Product 1.',
+    image: '@assets/Снимок экрана 2023-04-05 в 16.31 3.png',
+  },
+  {
+    id: 2,
+    title: 'Product 2',
+    description: 'This is the description of Product 2.',
+    image: '@assets/Снимок экрана 2023-04-05 в 16.31 3.png',
+  },
+  {
+    id: 3,
+    title: 'Product 3',
+    description: 'This is the description of Product 3.',
+    image: '@assets/Снимок экрана 2023-04-05 в 16.31 3.png',
+  },
+];
 
 const SelectData: SelectDataItem[] = [
   {
@@ -105,6 +127,16 @@ function Catalog() {
           label="Максимальная цена"
         />
       </FormControl>
+      </div>
+      <div>
+      {productData.map((product) => (
+        <ProductCard
+          key={product.id}
+          title={product.title}
+          description={product.description}
+          image={product.image}
+        />
+      ))}
       </div>
     </Container>
   );
