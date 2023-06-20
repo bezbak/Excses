@@ -1,14 +1,16 @@
-import '@/styles/globals.css'
 import type { AppProps } from 'next/app'
-import '../styles/user.scss'
 import { createTheme, ThemeProvider } from '@mui/material'
+import Layout from '@/components/Layout';
+
+import '@/styles/globals.css'
+import '../styles/user.scss'
 import '@fontsource/urbanist/300.css';
 import '@fontsource/urbanist/400.css';
 import '@fontsource/urbanist/500.css';
 import '@fontsource/urbanist/600.css';
 import '@fontsource/urbanist/700.css';
 import '@fontsource/urbanist/900.css';
-import Layout from '@/components/Layout/Layout';
+
 
 
 
@@ -68,10 +70,11 @@ const theme = createTheme({
 
 
 export default function App({ Component, pageProps }: AppProps) {
+  const AnyComponent = Component as any;
   return(
   <ThemeProvider theme={theme}>
     <Layout>
-      <Component {...pageProps} />
+      <AnyComponent {...pageProps} />
     </Layout>
   </ThemeProvider>
     

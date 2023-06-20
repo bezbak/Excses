@@ -3,8 +3,7 @@ import Link from "next/link"
 import { Typography, TextField, FormControl, InputLabel, OutlinedInput, InputAdornment, IconButton, Box, Divider, } from "@mui/material"
 import UserAnimation from "@/components/user/UserAnimation";
 import { DarkButton } from '@/components/UI/DarkButton';
-
-
+import { Forms } from '@/utils/forms';
 
 function EmailRequest() {
 
@@ -19,8 +18,7 @@ function EmailRequest() {
     setEmail(event.target.value)
     setHreff(isValidEmail(event.target.value) ? "/user/verification" : "")
   }
-
-
+  
   return (
     <div className='user max-w-[1200px] m-auto flex items-center '>
       <UserAnimation />

@@ -1,3 +1,4 @@
+import React from 'react'
 import HeroCarousel from '@/components/homePageComponents/HeroCarousel';
 import LogoCardList from '@/components/homePageComponents/LogoCardList';
 import Catalog from '@/components/homePageComponents/Catalog';

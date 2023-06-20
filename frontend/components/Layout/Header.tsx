@@ -8,10 +8,6 @@ import { HiOutlineHeart } from 'react-icons/hi';
 import { BiChat } from 'react-icons/bi'
 import {FaRegUser} from 'react-icons/fa';
 
-
-
-
-
 function Header() {
   const [isOpen, setIsOpen] = React.useState(false);
   const [lang, setLang] = React.useState('RUS');
@@ -19,12 +15,15 @@ function Header() {
   const handleClick = () => {
     setIsOpen(!isOpen);
   };
+
   const handleSearch = (query: string) => {
     console.log("Search query:", query);
   };
+
   const handleChange = (event: SelectChangeEvent) => {
     setLang(event.target.value as string);
   };
+
   return (
     <header className='bg-default h-[100px] flex items-center '>
       <Container sx={{display:'flex',alignItems:"center",justifyContent:"space-around"}}>
