@@ -24,3 +24,6 @@ class User(AbstractUser):
     telegram = models.CharField(
         max_length=50
     )
+    is_seller = models.BooleanField(
+        default=False
+    )
