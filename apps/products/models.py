@@ -1,6 +1,6 @@
 import random
 from django.db import models
-from apps.category.models import Category, SubCategory
+from apps.category.models import Category, SubCategory, Currency
 from apps.users.models import User
 # Create your models here.
 class Product(models.Model):
@@ -17,6 +17,11 @@ class Product(models.Model):
         max_length=8,
         blank=True, 
         null=True
+    )
+    currency = models.ForeignKey(
+        Currency,
+        related_name='curr_product',
+        on_delete=models.CASCADE
     )
     sale_price = models.CharField(
         max_length=10,

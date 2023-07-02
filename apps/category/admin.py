@@ -3,7 +3,7 @@ from django.utils.safestring import mark_safe
 from django.urls import reverse
 from django.utils.html import escape
 from django import forms
-from apps.category.models import Category, SubCategory
+from apps.category.models import Category, SubCategory, Currency
 # Register your models here.
 
 class SubCategoryForm(forms.ModelForm):
@@ -48,3 +48,4 @@ class ServiceAdmin(admin.ModelAdmin):
 
 admin.site.register(Category, ServiceAdmin)
 admin.site.register(SubCategory)
+admin.site.register(Currency)

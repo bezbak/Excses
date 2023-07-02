@@ -37,3 +37,15 @@ class SubCategory(models.Model):
     class Meta:
         verbose_name = 'Суб Категория'
         verbose_name_plural = 'Суб Категории'
+        
+class Currency(models.Model):
+    name = models.CharField(
+        max_length=20
+    )
+    
+    def __str__(self):
+        return self.name    
+    
+    class Meta:
+        verbose_name = 'Валюта'
+        verbose_name_plural = 'Валюты'

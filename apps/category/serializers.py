@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from apps.category.models import Category, SubCategory
+from apps.category.models import Category, SubCategory, Currency
 
 class SubCategorySerializer(serializers.ModelSerializer):
     class Meta:
@@ -21,3 +21,8 @@ class ProductCategorySerializer(serializers.ModelSerializer):
     class Meta:
         model = Category
         fields = ['id','name', 'slug']
+
+class ProductCurrencySerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Currency
+        fields = ['id','name']
