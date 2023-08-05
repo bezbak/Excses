@@ -26,3 +26,4 @@ class ProductCurrencySerializer(serializers.ModelSerializer):
     class Meta:
         model = Currency
         fields = ['id','name']
+        

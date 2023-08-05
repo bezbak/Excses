@@ -40,6 +40,7 @@ class SubCategory(models.Model):
         
 class Currency(models.Model):
     name = models.CharField(
+        'Currency name',
         max_length=20
     )
     
