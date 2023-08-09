@@ -8,6 +8,7 @@ from drf_yasg import openapi
 from django.conf.urls.static import static
 from rest_framework import routers 
 from apps.products.views import ProductViewSet, MediaViewSet
+from apps.users.views import UserViewSet
 schema_view = get_schema_view(
    openapi.Info(
       title="Snippets API",
@@ -31,12 +32,12 @@ api_urlpatterns = [
 ]
 router.register(r'product', ProductViewSet)
 router.register(r'media', MediaViewSet)
+router.register(r'users', UserViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include(api_urlpatterns)),
     path('api/', include(router.urls)),
-
     path('', RedirectView.as_view(url='/api/')),
 
 ]
