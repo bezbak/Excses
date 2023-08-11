@@ -1,5 +1,7 @@
+import random
 from django.db import models
 from django.contrib.auth.models import AbstractUser
+from django.utils.text import slugify
 # Create your models here.
 
 class User(AbstractUser):
@@ -41,3 +43,27 @@ class User(AbstractUser):
     is_seller = models.BooleanField(
         default=False
     )
+
+class ResetPassCode(models.Model):
+    user = models.ForeignKey(
+        User,
+        on_delete=models.CASCADE
+    )
+    email = models.CharField(
+        max_length=255
+    )
+    code = models.CharField(
+        max_length=4,
+        unique=True,
+        blank=True, 
+        null=True
+    )
+
+    def generate_field_value(self):
+        # Генерация случайной строки из цифр
+        return ''.join(random.choices('0123456789', k=6))
+
+    def save(self, *args, **kwargs):
+        if not self.code:
+            self.code = self.generate_field_value()
+        super().save(*args, **kwargs)

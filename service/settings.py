@@ -1,9 +1,11 @@
 
 from pathlib import Path
 import os
+import environ
+env = environ.Env()
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
+env.read_env(str(BASE_DIR / ".env"))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
@@ -32,6 +34,7 @@ INSTALLED_APPS = [
     "corsheaders",
     'rest_framework',
     'django_filters',
+    'django_rest_passwordreset',
     
     #apps
     'apps.users',
@@ -126,6 +129,16 @@ TIME_ZONE = 'Asia/Bishkek'
 USE_I18N = True
 
 USE_TZ = True
+
+
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_USE_TLS = env.bool("DJANGO_EMAIL_USE_TLS", default=False)
+EMAIL_USE_SSL = env.bool("DJANGO_EMAIL_USE_SSL", default=True)
+EMAIL_HOST = env("DJANGO_EMAIL_HOST", default='smtp.google.com')
+EMAIL_PORT = env.int("DJANGO_EMAIL_PORT", default=465)
+EMAIL_HOST_USER = env("DJANGO_EMAIL_HOST_USER", default='services.backend@yandex.ru')
+EMAIL_HOST_PASSWORD = env("DJANGO_EMAIL_HOST_PASSWORD", default='ujvejqwkbqshdghz')
 
 
 # Static files (CSS, JavaScript, Images)
