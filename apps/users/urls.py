@@ -4,7 +4,7 @@ from rest_framework_simplejwt.views import (
     TokenRefreshView,
 )
 from django.contrib.auth.views import LogoutView
-from apps.users.views import change_password, EmailCheckAPIView, ResetPasswordAPIView
+from apps.users.views import change_password, EmailCheckAPIView, ResetPasswordAPIView, RegisterAPIView
 urlpatterns = [
     path('token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
     path('token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
@@ -12,4 +12,5 @@ urlpatterns = [
     path('change_password/<int:id>/', change_password, name='change_password'),
     path('email_cheack/', EmailCheckAPIView.as_view(), name='email_cheack'),
     path('reset_password/', ResetPasswordAPIView.as_view(), name='reset_password'),
+    path('register/', RegisterAPIView.as_view(), name='register'),
 ]
