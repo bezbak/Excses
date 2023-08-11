@@ -36,9 +36,9 @@ router.register(r'users', UserViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/', include(api_urlpatterns)),
-    path('api/', include(router.urls)),
-    path('', RedirectView.as_view(url='/api/')),
+    path('api/v1/', include(api_urlpatterns)),
+    path('api/v1/', include(router.urls)),
+    path('', RedirectView.as_view(url='/api/v1/')),
 
 ]
 
