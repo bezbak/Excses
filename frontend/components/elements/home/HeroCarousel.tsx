@@ -1,10 +1,11 @@
-import React, { ReactElement } from 'react';
+import React from 'react';
 import Carousel from 'react-material-ui-carousel';
-import { Paper, IconButton, Button } from '@mui/material';
+import { Paper, Container} from '@mui/material';
 import Image, { StaticImageData } from 'next/image';
-import imgage from 'assets/HeroImage.png';
+import image from 'assets/HeroImage.jpg';
+import image1 from 'assets/HeroImage1.png';
 import { ChevronLeft, ChevronRight } from '@mui/icons-material';
-import { BiChevronDownCircle } from 'react-icons/bi';
+import { relative } from 'path';
 
 
 
@@ -19,34 +20,39 @@ const items: ItemProps[] = [
   {
     name: "Random Name #1",
     description: "Probably the most random thing you have ever seen!",
-    img: imgage
+    img: image
   },
   {
     name: "Random Name #2",
     description: "Hello World!",
-    img: imgage
+    img: image1
   },
   {
     name: "Random Name #2",
     description: "Hello World!",
-    img: imgage
+    img: image
   },
   {
     name: "Random Name #2",
     description: "Hello World!",
-    img: imgage
+    img: image
   },
   {
     name: "Random Name #2",
     description: "Hello World!",
-    img: imgage
+    img: image
   },
 ];
 
 export default function HeroCarousel() {
   return (
+
+<Container sx={{p:0, minHeight:"300px",position:"relative"}}>
     <Carousel
-    sx={{width:"100%", height:{xs:'30vh',md:"50vh"},borderRadius:"20px", overflow:'hidden'}}
+    sx={{ 
+        borderRadius:"20px",
+        pt:2 
+        }}
     navButtonsProps={{          
       style: {
           backgroundColor: '#E8ECF4',
@@ -87,7 +93,6 @@ export default function HeroCarousel() {
     }}
     indicatorContainerProps={{
       style: {
-        
         display:"flex",
         justifyContent: "center",
         gap: "22px",
@@ -95,26 +100,26 @@ export default function HeroCarousel() {
       }
 
   }}
-    className='container'
+    
     NextIcon={<ChevronRight className='text-4xl'/>}
-    PrevIcon={<ChevronLeft className='text-4xl'/>}
+    PrevIcon={<ChevronLeft className='text-4xl'/>}>
 
-    >
-      {items.map((item, i) => <CarouselItem key={i} item={item} />)}
+    {items.map((item, i) => <CarouselItem key={i} item={item} />)}
+
     </Carousel>
+    </Container>
   );
 }
 
 function CarouselItem(props: { item: ItemProps }) {
   return (
-    <Paper sx={{height:{xs:'30vh',md:"50vh"}}}>
-      <Image 
-        className='w-full rounded-[20px] md:rounded-[30px]'
-        src={props.item.img}
-        width={500}
-        height={100}
-        alt={props.item.name} />
-    </Paper>
+      <Paper sx={{height:'400px', width:"100%"}}>
+        <Image 
+          className='w-full h-full object-cover object-top rounded-xl'
+          src={props.item.img}
+          width={800}
+          alt={props.item.name} />
+      </Paper>
   );
 }
 

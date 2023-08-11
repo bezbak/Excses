@@ -3,4 +3,21 @@
     color:  rgb(30, 35, 44);
 }
 
-
+.mySwiper{
+    height:445px;
+}
+.swiper-slide{
+    height: 427px;
+    overflow: hidden;
+    
+}
+.swiper-pagination-bullet{
+    background: #4546DC !important;
+    opacity: .2 !important;
+}
+.swiper-pagination-bullet-active{
+    width: 12px !important;
+    height: 12px !important;
+    background: #4546DC !important;
+    opacity: 1 !important;
+}

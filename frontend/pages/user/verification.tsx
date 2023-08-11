@@ -1,5 +1,5 @@
 import React from 'react'
-import UserAnimation from '@/components/user/UserAnimation'
+import UserAnimation from '@/components/Layout/UserAnimation'
 import { DarkButton } from '@/components/UI/DarkButton'
 import { Typography, Box } from '@mui/material'
 import InputCode from '@/components/UI/InputCode'
@@ -37,6 +37,7 @@ function Verify() {
               disabled={!loading}
               type='submit'
               href={hreff}
+              className='dark-button'
               variant="contained"
               sx={{ my: 4, width: "100%", bgcolor: "black", fontSize: 16, fontWeight: 700, color: 'white', borderRadius: 2, ":hover": { bgcolor: "black" } }}>Отправить код</DarkButton>
             <Typography sx={{ mt: 2, fontSize: "18px" }}>Не получили код?<Link href='/user/login' className="font-bold text-info">Отправить снова</Link></Typography>
