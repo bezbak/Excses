@@ -38,7 +38,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/v1/', include(api_urlpatterns)),
     path('api/v1/', include(router.urls)),
-    path('', RedirectView.as_view(url='/api/v1/')),
+    path('', RedirectView.as_view(url=':3000')),
 
 ]
 

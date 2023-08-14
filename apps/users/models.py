@@ -1,7 +1,8 @@
 import random
 from django.db import models
 from django.contrib.auth.models import AbstractUser
-from django.utils.text import slugify
+from django.contrib.auth.hashers import make_password
+
 # Create your models here.
 
 class User(AbstractUser):
@@ -44,6 +45,11 @@ class User(AbstractUser):
         default=False
     )
 
+    def save(self, *args, **kwargs):
+        if len(self.password) < 15:
+            self.password = make_password(self.password)
+            print("set_password")
+        super().save(*args, **kwargs)   
 class ResetPassCode(models.Model):
     user = models.ForeignKey(
         User,
