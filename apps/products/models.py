@@ -81,3 +81,16 @@ class Media(models.Model):
     class Meta:
         verbose_name = 'Медиа'
         verbose_name_plural = 'Медии'
+
+class Favorites(models.Model):
+    user = models.ForeignKey(
+        User,
+        related_name='favorite_products',
+        on_delete=models.CASCADE
+    )
+    product = models.ForeignKey(
+        Product,
+        related_name='product_favorites',
+        on_delete=models.CASCADE
+    )
+    

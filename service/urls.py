@@ -7,7 +7,7 @@ from drf_yasg.views import get_schema_view
 from drf_yasg import openapi
 from django.conf.urls.static import static
 from rest_framework import routers 
-from apps.products.views import ProductViewSet, MediaViewSet
+from apps.products.views import ProductViewSet, MediaViewSet,FavoritesViewSet
 from apps.users.views import UserViewSet
 schema_view = get_schema_view(
    openapi.Info(
@@ -33,6 +33,7 @@ api_urlpatterns = [
 router.register(r'product', ProductViewSet)
 router.register(r'media', MediaViewSet)
 router.register(r'users', UserViewSet)
+router.register(r'favorites', FavoritesViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),

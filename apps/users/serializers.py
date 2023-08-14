@@ -2,6 +2,7 @@ from rest_framework import serializers
 from django.contrib.auth.password_validation import validate_password
 from apps.users.models import User, ResetPassCode
 from django.core.mail import send_mail
+from apps.products.serializers import FavoritesInfoSerializer
 
 class RegisterSerializer(serializers.ModelSerializer):
     password = serializers.CharField(write_only=True, required=True, validators=[validate_password])
@@ -14,7 +15,6 @@ class RegisterSerializer(serializers.ModelSerializer):
     def validate(self, attrs):
         if attrs['password'] != attrs['password2']:
             raise serializers.ValidationError({"password": "Пароли отличаются"})
-
         return attrs
 
     def create(self, validated_data):
@@ -26,9 +26,10 @@ class RegisterSerializer(serializers.ModelSerializer):
         return user
     
 class UserSerializer(serializers.ModelSerializer):
+    favorite_products = FavoritesInfoSerializer(many = True, read_only = True)
     class Meta:
         model = User
-        fields = ('id','username','first_name','last_name','email','profile_image','decription','country','phone_number','whatsapp','instagram','telegram','is_seller')
+        fields = ('id','username','first_name','last_name','email','profile_image','decription','country','phone_number','whatsapp','instagram','telegram','is_seller','favorite_products')
         
         
 class PostUserSerializer(serializers.ModelSerializer):
@@ -72,7 +73,8 @@ class EmailCheck(serializers.ModelSerializer):
                     [user.email] 
             )
             return code
-
+        else:
+            raise serializers.ValidationError({"Email": "Пользователя с такой почтой не существует"})
 class ResetPasswordSerializer(serializers.ModelSerializer):
     code = serializers.CharField(write_only=True)
     password = serializers.CharField(write_only = True, required = True, validators = [validate_password])

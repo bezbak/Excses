@@ -1,8 +1,8 @@
-from rest_framework import generics, viewsets, filters
+from rest_framework import mixins, viewsets, filters
 from django_filters.rest_framework import DjangoFilterBackend, FilterSet, RangeFilter
-from apps.products.models import Product, Media
+from apps.products.models import Product, Media, Favorites
 from .filters import PriceFilterBackend
-from apps.products.serializers import ProductSerializer, MediaSerializer
+from apps.products.serializers import ProductSerializer, MediaSerializer, FavoritesSerializer
 # Create your views here.
 
 class ProductFilter(FilterSet):
@@ -27,3 +27,7 @@ class ProductViewSet(viewsets.ModelViewSet):
         'currency'
     )
     search_fields = ['name']
+
+class FavoritesViewSet(mixins.CreateModelMixin, mixins.DestroyModelMixin, mixins.ListModelMixin, viewsets.GenericViewSet):
+    queryset = Favorites.objects.all()
+    serializer_class = FavoritesSerializer

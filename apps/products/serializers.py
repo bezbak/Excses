@@ -1,7 +1,6 @@
 from rest_framework import serializers
-from apps.products.models import Product, Media
+from apps.products.models import Product, Media, Favorites
 from apps.category.serializers import ProductCategorySerializer, ProductSubCategorySerializer,ProductCurrencySerializer
-from apps.users.serializers import PostUserSerializer
 class MediaSerializer(serializers.ModelSerializer):
     class Meta:
         model = Media
@@ -26,3 +25,24 @@ class ProductSerializer(serializers.ModelSerializer):
         else:
             data.setdefault('profile_image','')
         return data
+    
+class FavoritesSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Favorites
+        fields = ('id', 'user', 'product')
+class FavoritesInfoSerializer(serializers.ModelSerializer):
+    product = serializers.SerializerMethodField()
+    class Meta:
+        model = Favorites
+        fields = ['product']
+    def get_product(self, obj):
+        qs = obj.product
+        data = {}
+        data.setdefault('id',qs.id)
+        data.setdefault('name',qs.name)
+        data.setdefault('main_image',qs.main_image.url)
+        data.setdefault('price',qs.price)   
+        data.setdefault('sale',qs.sale)   
+        data.setdefault('sale_price',qs.sale_price)   
+        data.setdefault('currency',qs.currency.name)
+        return data    
