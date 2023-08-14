@@ -29,8 +29,20 @@ class UserSerializer(serializers.ModelSerializer):
     favorite_products = FavoritesInfoSerializer(many = True, read_only = True)
     class Meta:
         model = User
-        fields = ('id','username','first_name','last_name','email','profile_image','decription','country','phone_number','whatsapp','instagram','telegram','is_seller','favorite_products')
-        
+        fields = ('id','username','first_name','last_name','email','profile_image','decription','country','phone_number','whatsapp','instagram','telegram','is_seller','favorite_products','mid_rate')
+    mid_rate = serializers.SerializerMethodField()
+    def get_mid_rate(self, obj):
+        qs = obj.products.all()
+        stars = 0
+        length = 0
+        for i in qs:
+            for j in i.reviews.all():
+                stars += j.stars
+                length += 1
+        if length != 0:
+            return f"{str(stars/length)[:3]}"
+        else:
+            return "5"
         
 class PostUserSerializer(serializers.ModelSerializer):
     class Meta:

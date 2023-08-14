@@ -94,3 +94,15 @@ class Favorites(models.Model):
         on_delete=models.CASCADE
     )
     
+class ProductReviews(models.Model):
+    user = models.ForeignKey(
+        User,
+        related_name='products_reviews',
+        on_delete=models.CASCADE
+    )
+    product = models.ForeignKey(
+        Product,
+        related_name='reviews',
+        on_delete=models.CASCADE
+    )
+    stars = models.FloatField()

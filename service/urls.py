@@ -29,6 +29,7 @@ api_urlpatterns = [
     path('users/', include('apps.users.urls')),
     path('settings/', include('apps.settings.urls')),
     path('category/', include('apps.category.urls')),
+    path('product/', include('apps.products.urls')),
 ]
 router.register(r'product', ProductViewSet)
 router.register(r'media', MediaViewSet)
