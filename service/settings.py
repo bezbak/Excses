@@ -80,6 +80,9 @@ CORS_ALLOWED_ORIGINS = [
     "http://localhost:3001",
     "http://localhost:4000",
     "http://localhost:3002",
+    "http://176.57.213.250:3000/",
+    "http://176.57.213.250",
+    "http://eilbay.com"
 ]
 
 
